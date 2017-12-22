@@ -1,0 +1,84 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [        
+        {
+            "args": [
+                "./functions/singleFile/function.js",
+                "./payloads/payload.json"
+            ],
+            "type": "node",
+            "request": "launch",
+            "name": "function.js",
+            "program": "${workspaceFolder}/run.js",
+            "outFiles": [
+                "${workspaceFolder}/**/*.js"
+            ]
+        },
+        {
+            "args": [
+                "./functions/singleFile/functionAsynch.js",
+                "./payloads/payload.json"
+            ],
+            "type": "node",
+            "request": "launch",
+            "name": "functionAsynch.js",
+            "program": "${workspaceFolder}/run.js",
+            "outFiles": [
+                "${workspaceFolder}/**/*.js"
+            ]
+        },
+        {
+            "args": [
+                "./functions/singleFile/functionAsynchReject.js",
+                "./payloads/payload.json"
+            ],
+            "type": "node",
+            "request": "launch",
+            "name": "functionAsynchReject.js",
+            "program": "${workspaceFolder}/run.js",
+            "outFiles": [
+                "${workspaceFolder}/**/*.js"
+            ]
+        },
+        {
+            "args": [
+                "./functions/zip/functionAsynch.js",
+                "./payloads/payload.json"
+            ],
+            "type": "node",
+            "request": "launch",
+            "name": "zip",
+            "program": "${workspaceFolder}/run.js",
+            "outFiles": [
+                "${workspaceFolder}/**/*.js"
+            ]
+        },
+        {
+            "args": [                
+                "./payloads/payload.json"
+            ],
+            "type": "node",
+            "request": "launch",
+            "name": "dockerized function",
+            "program": "${workspaceFolder}/functions/docker/function.js",
+            "outFiles": [
+                "${workspaceFolder}/**/*.js"
+            ]
+        },
+        {
+            "name": "function in container",
+            "type": "node",
+            "request": "attach",
+            "port": 5858,
+            "protocol": "inspector",
+            "address": "localhost",
+            "restart": true,
+            "sourceMaps": false,            
+            "localRoot": "${workspaceRoot}/functions/docker",
+            "remoteRoot": "/code"
+        }
+    ]
+}

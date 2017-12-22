@@ -1,0 +1,7 @@
+{
+    "message": "input message",
+    "user": {
+        "firstName": "Niklas",
+        "lastName": "Heidloff"
+    }
+}

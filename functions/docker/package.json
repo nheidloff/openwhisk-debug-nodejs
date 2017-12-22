@@ -1,0 +1,19 @@
+{
+  "name": "openwhisk-docker-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "function.js",
+  "scripts": {
+    "start": "node ./function.js",
+    "dev": "node ../node_modules/nodemon/bin/nodemon.js --inspect=0.0.0.0:5858 ./function.js"
+  },
+  "dependencies": {
+    "body-parser": "1.11.0",
+    "express": "4.11.2"
+  },
+  "devDependencies": {
+    "nodemon": "1.11.0"
+  },
+  "author": "",
+  "license": "ALv2"
+}
