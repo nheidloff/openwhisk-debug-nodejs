@@ -1,7 +1,7 @@
 //const openwhisk = require('openwhisk') // sample dependency
 
 function main(params) {
-    console.log('function.js invoked adsf')
+    console.log('function.js invoked')
     return {
         result: params
     }
