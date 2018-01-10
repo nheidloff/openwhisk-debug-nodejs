@@ -2,12 +2,18 @@
 
 This [project](https://github.com/nheidloff/openwhisk-debug-nodejs) shows how [Apache OpenWhisk](http://openwhisk.org/) functions can be developed and debugged locally via [Visual Studio Code](https://code.visualstudio.com/).
 
+Note: This project doesn't contain a new tool or OpenWhisk extension. Instead it contain sample functions and configurations of VS Code that explain how to debug your own OpenWhisk functions.
+
+Note: You don't need to use Docker to debug functions unless you want to write your functions in Docker containers. In the simplest case overwrite the samples in functions/singleFile with your own code and run the debug configurations.
+
 Four different scenarios are supported:
 
 * Single file functions (synch and asynch)
 * Zipped functions with additional npm dependencies
 * Functions running in Docker containers
 * Dockerized functions running in the local Node.js runtime
+
+Watch the [video](Watch the video to see how ) to see this in action.
 
 The following screenshot shows how functions that run in Docker can be debugged from Visual Studio Code. In order to do this, a volume is used to share the files between the IDE and the container and VS Code attaches a remote debugger to the Docker container. The functions can be changed in the IDE without having to restart the container. [nodemon](https://github.com/remy/nodemon) restarts the Node application in the container automatically when files change.
 
