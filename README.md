@@ -2,9 +2,9 @@
 
 This [project](https://github.com/nheidloff/openwhisk-debug-nodejs) shows how [Apache OpenWhisk](http://openwhisk.org/) functions can be developed and debugged locally via [Visual Studio Code](https://code.visualstudio.com/).
 
-This project doesn't contain a new tool or OpenWhisk extension. Instead it contain sample functions and configurations of VS Code that explain how to debug your own OpenWhisk functions.
+This project doesn't contain a new tool or OpenWhisk extension. Instead it contains sample functions and configurations of VS Code that explain how to debug your own OpenWhisk functions.
 
-You don't need to use Docker to debug functions unless you want to write your functions in Docker containers. In the simplest case overwrite the samples in functions/singleFile with your own code and run the debug configurations.
+You don't need to use Docker to debug functions unless you want to write your functions in Docker containers. In the simplest case clone the repo, overwrite the samples in functions/singleFile with your own code and run the debug configurations.
 
 Four different scenarios are supported:
 
