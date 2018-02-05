@@ -206,7 +206,7 @@ The function can be changed in the IDE without having to restart the container a
 
 Run the launch configurations 'typescript function' to start the container and to attach the debugger - see [screenshot](https://github.com/nheidloff/openwhisk-debug-nodejs/blob/master/images/debugging-typescript.png).
 
-You can define the input as JSON in [payload.json](payloads/payload.json). Set breakpoints in [function.js](functions/docker/function.js). After this invoke the endpoints in the container by running these commands from a second terminal.
+You can define the input as JSON in [payload.json](payloads/payload.json). Set breakpoints in [function.ts](functions/typescript/src/function.ts). After this invoke the endpoints in the container by running these commands from a second terminal.
 
 ```sh
 $ cd openwhisk-debug-nodejs
