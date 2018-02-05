@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "0.0.0",
+  "scripts": {
+    "postinstall": "tsc -p ./src",
+    "watch": "tsc -w -p ./src",
+    "debug": "nodemon --watch ./dist --inspect=0.0.0.0:5858 --nolazy ./dist/function.js",
+    "docker-debug": "docker-compose up",
+    "start": "node ./dist/function.js"
+  },
+  "devDependencies": {
+    "@types/express": "4.11.1",
+    "@types/node": "9.4.0",
+    "nodemon": "1.11.0",
+    "typescript": "2.7.1"
+  },
+  "main": "./dist/function.js",
+  "dependencies": {
+    "express": "4.16.2"
+  }
+}

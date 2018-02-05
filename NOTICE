@@ -2,9 +2,13 @@ This product includes software originally developed by IBM Corporation
 Copyright 2017 IBM Corp.
 https://github.com/nheidloff/openwhisk-debug-nodejs
 
-The project contains code from the following project:
+The project contains code from the following projects:
+
 https://github.com/apache/incubator-openwhisk-devtools/tree/master/node-local
 https://github.com/apache/incubator-openwhisk-devtools/blob/883dd9e4fea725e9da001c51901f2d95a2454da8/node-local/test.js#L65-L73
 ALv2: https://github.com/apache/incubator-openwhisk-devtools/blob/master/LICENSE.txt
+
+https://github.com/Microsoft/vscode-recipes/tree/master/Docker-TypeScript
+MIT: https://github.com/Microsoft/vscode-recipes/blob/master/LICENSE
 
 All other dependencies are pulled via npm.

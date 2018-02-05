@@ -79,6 +79,25 @@
             "sourceMaps": false,            
             "localRoot": "${workspaceRoot}/functions/docker",
             "remoteRoot": "/code"
-        }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "typescript function",
+            "preLaunchTask": "tsc-watch",
+            "protocol": "auto",
+            "localRoot": "${workspaceRoot}/functions/typescript",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [ "--prefix", "./functions/typescript", "run", "docker-debug" ],
+            "port": 5858,
+            "restart": true,
+            "timeout": 6000,
+            "remoteRoot": "/server",
+            "outFiles": [
+              "${workspaceRoot}/functions/typescript/dist/**/*.js"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+          }    
     ]
 }

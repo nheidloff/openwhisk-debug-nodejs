@@ -6,12 +6,13 @@ This project doesn't contain a new tool or OpenWhisk extension. Instead it conta
 
 You don't need to use Docker to debug functions unless you want to write your functions in Docker containers. In the simplest case clone the repo, overwrite the samples in functions/singleFile with your own code and run the debug configurations.
 
-Four different scenarios are supported:
+Five different scenarios are supported:
 
-* Single file functions (synch and asynch)
-* Zipped functions with additional npm dependencies
-* Functions running in Docker containers
-* Dockerized functions running in the local Node.js runtime
+* Single file JavaScript functions (synch and asynch)
+* Zipped JavaScript functions with additional npm dependencies
+* JavaScript functions running in Docker containers
+* Dockerized JavaScript functions running in the local Node.js runtime
+* TypeScript functions running in Docker containers
 
 Watch the [video](https://www.youtube.com/watch?v=P9hpcOqQ3hw) to see this in action.
 
@@ -193,6 +194,48 @@ $ node runDockerFunction.js
 **Deployment and Invocation**
 
 See above. This is identical to 'Debugging Functions in Docker Containers'.
+
+
+## Debugging TypeScript Functions in Docker Containers
+
+There is a sample function [function.js](functions/typescript/function.ts) that shows how to write an OpenWhisk function in TypeScript running in a container by implementing the endpoints '/init' and '/run'.
+
+The function can be changed in the IDE without having to restart the container after every change. Instead a mapped volume is used to share the files between the IDE and the container and [nodemon](https://github.com/remy/nodemon) restarts the Node application in the container automatically when files change.
+
+**Debugging**
+
+Run the launch configurations 'typescript function' to start the container and to attach the debugger - see [screenshot](https://github.com/nheidloff/openwhisk-debug-nodejs/blob/master/images/debugging-typescript.png).
+
+You can define the input as JSON in [payload.json](payloads/payload.json). Set breakpoints in [function.js](functions/docker/function.js). After this invoke the endpoints in the container by running these commands from a second terminal.
+
+```sh
+$ cd openwhisk-debug-nodejs
+$ node runDockerFunction.js
+```
+
+You'll see the output of the function in the terminal.
+
+After you're done stop the container via these commands in the first terminal.
+
+```sh
+$ cd openwhisk-debug-nodejs/functions/typescript
+$ docker-compose down
+```
+
+**Deployment and Invocation**
+
+In order to deploy the functions to IBM Cloud Functions, replace 'your-ibm-cloud-organization', 'your-ibm-cloud-space' and 'dockerhub-name' and run the following commands:
+
+```sh
+$ bx login -a api.ng.bluemix.net
+$ bx target -o <your-ibm-cloud-organization> -s <your-ibm-cloud-space>
+$ bx plugin install Cloud-Functions -r Bluemix
+$ cd openwhisk-debug-nodejs/functions/typescript
+$ docker build -t <dockerhub-name>/openwhisk-docker-typescript-debug:latest .
+$ docker push <dockerhub-name>/openwhisk-docker-typescript-debug
+$ bx wsk action create actionTypeScript --docker <dockerhub-name>/openwhisk-docker-typescript-debug:latest
+$ bx wsk action invoke --blocking actionTypeScript --param name Niklas
+```
 
 
 ## Resources
