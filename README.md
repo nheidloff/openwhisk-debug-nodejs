@@ -198,7 +198,7 @@ See above. This is identical to 'Debugging Functions in Docker Containers'.
 
 ## Debugging TypeScript Functions in Docker Containers
 
-There is a sample function [function.js](functions/typescript/function.ts) that shows how to write an OpenWhisk function in TypeScript running in a container by implementing the endpoints '/init' and '/run'.
+There is a sample function [function.ts](functions/typescript/src/function.ts) that shows how to write an OpenWhisk function in TypeScript running in a container by implementing the endpoints '/init' and '/run'.
 
 The function can be changed in the IDE without having to restart the container after every change. Instead a mapped volume is used to share the files between the IDE and the container and [nodemon](https://github.com/remy/nodemon) restarts the Node application in the container automatically when files change.
 
