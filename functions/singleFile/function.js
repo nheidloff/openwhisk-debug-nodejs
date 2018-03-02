@@ -3,7 +3,9 @@
 function main(params) {
     console.log('function.js invoked')
     return {
-        result: params
+        firstName: 'Niklas',
+        lastName: 'Heidloff',
+        id: params.id
     }
 }
 

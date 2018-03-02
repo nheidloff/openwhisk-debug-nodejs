@@ -1,0 +1,11 @@
+{
+  "name": "openwhisk-debug-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "functionAsynch.js",
+  "author": "",
+  "license": "ALv2",
+  "dependencies": {
+    "string-to-stream": "1.1.0"
+  }
+}

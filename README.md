@@ -33,6 +33,8 @@ Make sure you have the following tools installed:
 * [Node](https://nodejs.org/en/download/)
 * [Docker](https://docs.docker.com/engine/installation/)
 * [git](https://git-scm.com/downloads)
+* [IBM Cloud account](https://ibm.biz/nheidloff)
+
 
 **Setup**
 
