@@ -63,7 +63,7 @@ There are three sample functions:
 
 **Debugging**
 
-To run and debug the functions, you can define the input as JSON in [payload.json](payloads/payload.json). In order to debug the functions, set breakpoints in the code.
+To run and debug the functions, you can define the input as JSON in [payload.json](payloads/payload.json), and define default params in [params.json](/params/params.json). In order to debug the functions, set breakpoints in the code.
 
 Run the launch configurations 'function.js', 'functionAsynch.js' and 'functionAsychReject.js' to run and debug the functions - see [screenshot](https://github.com/nheidloff/openwhisk-debug-nodejs/blob/master/images/debugging-single-file-1.png).
 

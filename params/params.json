@@ -1,0 +1,6 @@
+{
+    "tenant": "test",
+    "user": "admin",
+    "password": "admin",
+    "url": "https://someapp.net"
+}
