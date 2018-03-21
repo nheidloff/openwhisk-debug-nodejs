@@ -1,9 +1,19 @@
 const actionFileName = './functions/singleFile/function.js'
 const payloadFileName = './payloads/payload.json'
+const paramsFileName = './params/params.json'
 
 run = () => {
     let openWhiskFunction = require((process.argv[2] || actionFileName))
     let payload = require((process.argv[3] || payloadFileName))
+    let params = require((process.argv[4] || paramsFileName))
+
+    if (params) {
+        for (let item in params) {
+            if (!payload.messages[0].item) {
+                payload.messages[0][item] = params[item]
+            }
+        }
+    }
 
     const mainFunction = openWhiskFunction.main ? openWhiskFunction.main : fallback(actionFileName);
     let promise = mainFunction(payload)
@@ -14,10 +24,10 @@ run = () => {
                 console.log(JSON.stringify(response, null, 3))
             })
             .catch(
-            function (reason) {
-                console.error(JSON.stringify(reason, null, 3))
-                return {}
-            });
+                function (reason) {
+                    console.error(JSON.stringify(reason, null, 3))
+                    return {}
+                });
     }
     else {
         console.log(JSON.stringify(promise, null, 3))
